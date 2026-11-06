@@ -59,8 +59,8 @@ Số lượng prediction theo ngưỡng: xem output ô so sánh `0.20` / `0.35` 
    Đối với vật thể bị che khuất một phần hoặc bị cắt ở mép ảnh, annotator cần tuân theo quy tắc thống nhất về việc chỉ đánh dấu phần nhìn thấy hay ước lượng toàn bộ vật thể. Không nên để mỗi annotator tự đưa ra cách xử lý khác nhau.
    Các trường hợp không thể xác định rõ ranh giới vật thể cần được đánh dấu để người kiểm duyệt xem xét.
 6. Trên ảnh kitchen, chỉ ra một vật bị che khuất hoặc cắt mép. Bạn sẽ viết thành quy tắc trong guideline, hay đưa lên hỏi Lab Coach (escalation)? Vì sao?
-   Trên ảnh kitchen, tôi quan sát thấy một phần người xuất hiện ở sát mép trái ảnh và bị cắt khỏi khung hình.
-   Tôi đề xuất xây dựng guideline thống nhất cho trường hợp này: annotator chỉ vẽ bounding box bao quanh phần vật thể thực sự nhìn thấy trong ảnh, không tự ý ước lượng phần nằm ngoài khung hình.
+   Trên ảnh kitchen, em quan sát thấy một phần người xuất hiện ở sát mép trái ảnh và bị cắt khỏi khung hình.
+   Em đề xuất xây dựng guideline thống nhất cho trường hợp này: annotator chỉ vẽ bounding box bao quanh phần vật thể thực sự nhìn thấy trong ảnh, không tự ý ước lượng phần nằm ngoài khung hình.
    Cần áp dụng cùng một quy tắc cho tất cả annotator để đảm bảo bounding box nhất quán và chất lượng ground truth. Nếu dataset có quy định riêng về vật thể bị cắt khỏi ảnh, annotator cần tuân thủ quy định đó.
 
 ## 3. Phân đoạn theo từng đối tượng
@@ -81,8 +81,8 @@ Chỉ dùng ảnh `sample_id = kitchen`. Chọn **một** record.
    Annotator cần vẽ đường biên mask bám sát đường viền thực tế của từng vật thể, chỉ bao gồm những pixel thuộc về vật thể và không lấy thêm phần background xung quanh.
    Mỗi đối tượng riêng biệt phải có một mask riêng, kể cả khi nhiều đối tượng có cùng class. Đối với các vùng biên không rõ ràng, cần tuân thủ guideline thống nhất và không tự ý mở rộng hoặc thu hẹp mask theo cảm tính.
 5. Trên ảnh kitchen, chỉ ra một chỗ biên mờ / hai vật chạm nhau / bị che. Bạn dùng guideline hay escalation? Vì sao?
-   Trên ảnh kitchen, tôi quan sát thấy chiếc bát ở khu vực phía trước, bên trái bàn bếp tiếp xúc với mặt bàn. Đây là trường hợp hai vật thể nằm sát nhau, khiến việc xác định chính xác đường biên giữa mask của bowl và dining table có thể gặp khó khăn.
-   Tôi chọn escalation vì tại những vị trí đường tiếp xúc bị che khuất hoặc không rõ ràng, annotator có thể xác định ranh giới khác nhau. Cần yêu cầu Lab Coach hoặc người phụ trách làm rõ quy tắc phân định pixel thuộc về từng vật thể trước khi tiếp tục gán nhãn.
+   Trên ảnh kitchen, em quan sát thấy chiếc bát ở khu vực phía trước, bên trái bàn bếp tiếp xúc với mặt bàn. Đây là trường hợp hai vật thể nằm sát nhau, khiến việc xác định chính xác đường biên giữa mask của bowl và dining table có thể gặp khó khăn.
+   Em chọn escalation vì tại những vị trí đường tiếp xúc bị che khuất hoặc không rõ ràng, annotator có thể xác định ranh giới khác nhau. Cần yêu cầu Lab Coach hoặc người phụ trách làm rõ quy tắc phân định pixel thuộc về từng vật thể trước khi tiếp tục gán nhãn.
    Điều này giúp đảm bảo mask của từng instance nhất quán và hạn chế sự khác biệt giữa các annotator.
 
 ## 4. Vòng đời và kiểm tra chất lượng
@@ -101,8 +101,8 @@ Lab hôm nay chỉ **xem prediction**. Chuỗi dưới đây là vòng đời pr
 
 ## 5. An toàn dữ liệu
 
-1. Tôi chỉ sử dụng dữ liệu được cung cấp chính thức cho bài lab, không tự ý chia sẻ, tải lên nền tảng bên ngoài, tiết lộ thông tin nhạy cảm hoặc sử dụng dữ liệu sai mục đích.
-2. Tôi sẽ dừng xử lý dữ liệu đó, không tự ý chỉnh sửa, chia sẻ hoặc tiếp tục sử dụng. Sau đó, tôi sẽ báo cho Lab Coach hoặc giảng viên phụ trách để được hướng dẫn cách xử lý phù hợp.
+1. Em chỉ sử dụng dữ liệu được cung cấp chính thức cho bài lab, không tự ý chia sẻ, tải lên nền tảng bên ngoài, tiết lộ thông tin nhạy cảm hoặc sử dụng dữ liệu sai mục đích.
+2. Em sẽ dừng xử lý dữ liệu đó, không tự ý chỉnh sửa, chia sẻ hoặc tiếp tục sử dụng. Sau đó, em sẽ báo cho Lab Coach hoặc giảng viên phụ trách để được hướng dẫn cách xử lý phù hợp.
 
 ## 6. Checklist trước khi nộp link repo
 
